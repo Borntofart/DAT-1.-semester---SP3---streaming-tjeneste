@@ -3,24 +3,27 @@
 
 title Domain Model - Streaming Service
 
-object Media
-object Movie
-object Series
-object Season
-object Episode
-object Category
-object User
-object Administrator
+abstract class Media
+class Movie
+class Series
+class Season
+class Episode
+class User
+class Administrator
+enum Category
 
-Movie --|> Media : is a
-Series --|> Media : is a
-Administrator --|> User : is a
+' ===== Arv =====
+Movie --|> Media
+Series --|> Media
+Administrator --|> User
 
-Series *-- Season : consists of
-Season *-- Episode : has
+' ===== Relationer =====
+Series *-- Season
+Season *-- Episode
 
-Media -- Category : belongs to
+Media -- Category
 
-User -- Movie : watched / saved
+User -- Media : watched
+User -- Media : saved
 
 @enduml
