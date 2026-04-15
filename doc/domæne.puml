@@ -12,16 +12,16 @@ class User
 class Administrator
 enum Category
 
-' ===== Arv =====
+'Arv'
 Movie --|> Media
 Series --|> Media
 Administrator --|> User
 
-' ===== Relationer =====
+'Relationer'
 Series *-- Season
 Season *-- Episode
 
-Media -- Category
+Media -- Category : Hvert Media tilhører en Category
 
 User -- Media : watched
 User -- Media : saved
