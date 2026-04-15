@@ -1,0 +1,25 @@
+@startuml
+actor User
+
+participant TextUI
+participant StreamingService
+participant FileIO
+
+User -> TextUI : start application
+TextUI -> StreamingService : startSystem()
+StreamingService -> FileIO : loadUsers()
+FileIO --> StreamingService : users
+
+StreamingService -> TextUI : show menu
+User -> TextUI : select login / register
+
+
+
+'Brugeren åbner applikationen via TextUI.
+'Herefter kalder TextUI StreamingService, som starter systemet.
+'StreamingService forsøger at indlæse brugerdata fra fil gennem FileIO.
+'De indlæste data sendes tilbage til StreamingService.
+'Til sidst beder StreamingService TextUI om at vise startmenuen.
+'Brugeren vælger herefter enten at logge ind eller oprette en ny bruger.
+
+@enduml
