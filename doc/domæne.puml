@@ -1,0 +1,26 @@
+@startuml
+!pragma layout smetana
+
+title Domain Model - Streaming Service
+
+object Media
+object Movie
+object Series
+object Season
+object Episode
+object Category
+object User
+object Administrator
+
+Movie --|> Media : is a
+Series --|> Media : is a
+Administrator --|> User : is a
+
+Series *-- Season : consists of
+Season *-- Episode : has
+
+Media -- Category : belongs to
+
+User -- Movie : watched / saved
+
+@enduml
