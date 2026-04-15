@@ -1,24 +1,42 @@
 # DAT-1.-semester---SP3---streaming-tjeneste
 
 Entiteter:
-- Medie
-- Film
-- Serie
-- Sæson
+- Media (Superklasse)
+- Movie
+- Series
+- Season
 - Episode
-- Kategori(crime,war,drama,family,romance,sci-fi)
-- Bruger
-- Administrator
-- Liste(sete film /gemte film)
+- User
+- Admin (valgfri)
+
+Enum:
+Categori(crime,war,drama,family,romance,sci-fi) måske ENUM? Fordi det bare er en værdi
 
 Attributter:
-- Udgivelsesår (Medie)
-- Rating (Medie)
-- Titel (Medie)
-- Brugernavn(Bruger)
-- Password(Bruger)
+Media:
+- title
+- releaseYear
+- rating
+- category
 
-System:
-- Startmenu / Hovedmenu?
-- TextIU?
-- FileIO?
+User:
+- username
+- password
+- watchedMovies (liste)
+- savedMovies (liste)
+
+Series:
+- seasons (liste af Season)
+
+Season:
+- episodes (liste af Episode)
+
+Episode:
+- title 
+- episodeNumber (for at kunne identificere episoder i en sæson) (står ikke i opgaven)
+- duration (for at vise længden på en episode) (står ikke i opgaven)
+
+Systemklasser:
+- StreamingService (logik) 
+- TextIU (Brugerinterface)
+- FileIO (Datahåndtering)
